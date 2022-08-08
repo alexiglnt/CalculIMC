@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/style.css">
+    <title>Calcul IMC</title>
+</head>
+<body>
+
+    <h1> Calcul ton IMC </h1>
+
+    <!-- POID -->
+    <div id="poid-container" class="container">
+        <label for="poid"> Ton poid (kg) </label>
+        <input type="number" name="poid" id="weight">
+    </div>
+
+    <!-- TAILLE -->
+    <div id="taille-container" class="container"> 
+        <label for="taille"> Ta taille (cm) </label>
+        <input type="number" name="taille" id="size">
+    </div>
+
+    <!-- BOUTON -->
+    <button type="submit" id="btn"> Calculez votre IMC </button>
+
+
+    <div id="result"></div>
+    <div id="infos"></div>
+
+
+    <script src="src/script.js"></script>    
+</body>
+</html>
