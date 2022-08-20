@@ -18,6 +18,10 @@ h1 {
     font-size: 50px;
 }
 
+h1 span {
+    margin-left: 20px;
+}
+
 h1, .container, #result, #infos, button {
     display: flex;
     justify-content: center;
@@ -65,4 +69,33 @@ label {
 label, #result, #infos {
     font-size: 25px;
     color: rgb(70, 70, 70);
+}
+
+#def-imc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 500px;
+    font-size: 15px;
+    text-align: justify;
+    word-spacing: 5px;
+}
+
+#result {
+    font-size: 50px;
+    color: rgb(70, 70, 70);
+}
+
+@media screen and (max-width: 650px) {
+
+    .container label {
+        font-size: 20px;
+        margin-left: 20px;
+    }
+
+    .container input {
+        margin-right: 20px;
+        width: 200px;
+    }
 }

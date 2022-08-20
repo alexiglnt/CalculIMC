@@ -5,30 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/style.css">
+    <link rel="icon" href="src/icon.png">
     <title>Calcul IMC</title>
 </head>
 <body>
 
-    <h1> Calcul ton IMC </h1>
+    <h1> Calcul <span> d'IMC </span> </h1>
 
-    <!-- POID -->
-    <div id="poid-container" class="container">
-        <label for="poid"> Ton poid (kg) </label>
-        <input type="number" name="poid" id="weight">
-    </div>
+    <!--<p id="def-imc"> L'Indice de Masse Corporelle (IMC) permet de déterminer la corpulence d'une personne. Cet IMC se calcule en fonction de la taille et du poids de la personne. </p>-->
 
     <!-- TAILLE -->
     <div id="taille-container" class="container"> 
-        <label for="taille"> Ta taille (cm) </label>
-        <input type="number" name="taille" id="size">
+        <label for="taille"> Votre taille (cm) </label>
+        <input type="number" name="taille" id="size" min="0" max="1000">
+    </div>
+
+    <!-- POID -->
+    <div id="poid-container" class="container">
+        <label for="poid"> Votre poid (kg) </label>
+        <input type="number" name="poid" id="weight" min="0" max="1000">
     </div>
 
     <!-- BOUTON -->
     <button type="submit" id="btn"> Calculez votre IMC </button>
 
 
-    <div id="result"></div>
-    <div id="infos"></div>
+    <div id="result"> 0 </div> <br>
+    <div id="infos"> En attente du résultat... </div>
 
 
     <script src="src/script.js"></script>    

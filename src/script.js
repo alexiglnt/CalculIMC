@@ -8,23 +8,33 @@ const btn = document.getElementById('btn');
 btn.addEventListener('click', () => 
 {
     const calcul = (parseFloat(weight.value) / (parseFloat(size.value) * parseFloat(size.value))) / 0.0001;
-    result.innerHTML = "Vous avez un IMC de <b>" + calcul + "<b>";
-    infos.innerHTML = infoIMC(calcul);
+    const calculFinal = Math.round(calcul * 10) / 10
+    result.innerHTML = "<b>" + calculFinal + "<b>";
+    infos.innerHTML = infoIMC(calculFinal);
 });
 
 function infoIMC(valueIMC)
 {
     let info;
 
-    if (valueIMC < 18.5) 
+    if (valueIMC < 0)
     {
-        info = "Poids insuffisant et pouvant occasionner certains risques pour la santé";
+        info = "<br> Remplissez correctement les inputs";
+        result.style.color = '#f00';
+    }
+    else if (valueIMC < 18.5) // #04145
+    {
+        info = "<br> Résultat : Maigreur 😕";
+        result.style.color = '#250064';
     } else if (valueIMC < 24.9) {
-        info = "Poids qui n'augmente pas les risques pour la santé.";
+        info = "<br> Résultat : Bonne santé 👍🏼";
+        result.style.color = '#059a00';
     } else if (valueIMC < 29.9) {
-        info = "Excès de poids pouvant occasionner certains risques pour la santé.";
+        info = "<br> Résultat : Surpoids 😬";
+        result.style.color = '#d77700';
     } else {
-        info = "Obésité, risque accru de développer certaines maladies.";
+        info = "<br> Résultat : Obésité ⚠️";
+        result.style.color = '#f00';
     }
 
     return info;
