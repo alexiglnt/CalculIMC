@@ -17,10 +17,17 @@ function infoIMC(valueIMC)
 {
     let info;
 
-    if (valueIMC < 0)
+    if (valueIMC <= 0 || weight.value <= 0  || size.value <= 0)
     {
         info = "<br> Remplissez correctement les inputs";
         result.style.color = '#f00';
+        result.innerHTML = "🤨";
+    }
+    else if (valueIMC > 100 || valueIMC < 10)
+    {
+        info = "<br> Alors comme ça on essaye de rentrer des valeurs aberrantes ?";
+        result.style.color = '#f00';
+        result.innerHTML = "🤭";
     }
     else if (valueIMC < 18.5) // #04145
     {
